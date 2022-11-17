@@ -1,15 +1,24 @@
-import React from "react";
+import React from 'react'
+import {db} from '../firebase'
+import { onValue, ref, set } from "firebase/database";
 
 //INTERNAL IMPORT
 import Style from "../styles/index.module.css";
 import { HeroSection } from "../components/componentsindex";
 
-const Home = () => {
+
+function index() {
+console.log("helloooo")
+onValue(ref(db,'/'),(snapshot)=>{
+  const data = snapshot.val();
+  console.log(data);
+});
+
   return (
     <div className = {Style.homePage}>
       <HeroSection />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default index
