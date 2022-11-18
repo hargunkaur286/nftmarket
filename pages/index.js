@@ -4,8 +4,7 @@ import { onValue, ref, set } from "firebase/database";
 
 //INTERNAL IMPORT
 import Style from "../styles/index.module.css";
-import { HeroSection } from "../components/componentsindex";
-
+import { Collection, HeroSection } from "../components/componentsindex";
 
 function index() {
 console.log("helloooo")
@@ -17,6 +16,7 @@ onValue(ref(db,'/'),(snapshot)=>{
   return (
     <div className = {Style.homePage}>
       <HeroSection />
+      <Collection/>
     </div>
   )
 }
