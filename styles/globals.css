@@ -453,10 +453,10 @@ body .container {
   margin: 0 auto;
 } */
 
-h1,
+/* h1,
 h2,
-p,
-button {
+p, */
+/* button {
   font-family: "Montserrat", cursive;
   font-weight: 100;
 }
@@ -464,9 +464,9 @@ button {
 p,
 button {
   font-weight: 300;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 40px;
 }
 
@@ -484,7 +484,7 @@ h2 {
 p {
   color: #666666;
   line-height: 1.5;
-}
+} */
 
 button {
   background: #9AD3DE;
