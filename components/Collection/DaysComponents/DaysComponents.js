@@ -6,7 +6,12 @@ import { MdVerified } from "react-icons/md";
 import Style from "./DaysComponents.module.css";
 import images from "../../../img";
 
-const DaysComponents = ({ el, i }) => {
+const DaysComponents = ({ el, i, setVisible }) => {
+
+  const handleVote = () => {
+    setVisible(true)
+  }
+
   return (
     <div className={Style.daysComponent}>
       <div className={Style.daysComponent_box}>
@@ -78,7 +83,7 @@ const DaysComponents = ({ el, i }) => {
             </div>
 
             <div className={Style.daysComponent_box_title_info_price}>
-              <small>Vote Now</small>
+              <small onClick={handleVote(el)}>Vote Now</small>
             </div>
           </div>
         </div>

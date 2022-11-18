@@ -5,7 +5,7 @@ import {
   BsFillCalendarDateFill,
   BsCalendar3,
 } from "react-icons/bs";
-
+import Modal from 'react-awesome-modal';
 import { db } from '../../firebase'
 
 //INTERNAL IMPORT
@@ -18,6 +18,8 @@ const Collection = () => {
   const [following, setFollowing] = useState(false);
   const [news, setNews] = useState(false);
   const [apiData, setApiData] = useState([])
+  const [visible, setVisible] = useState(false);
+  const [popData, setPopData] = useState('');
   useEffect(() => {
     let arr = [];
     onValue(ref(db, `/`), (snapshot) => {
@@ -58,6 +60,16 @@ const Collection = () => {
   };
   return (
     <div className={Style.collection}>
+
+      <Modal visible={visible} width="400" height="300" effect="fadeInUp" onClickAway={() => setVisible(false)}>
+        <div>
+          <h1>Title</h1>
+          <p>Some Contents</p>
+
+        </div>
+
+      </Modal>
+
       <div className={Style.collection_title}>
         <h2>Top List Creators</h2>
         <div className={Style.collection_collections}>
@@ -77,7 +89,7 @@ const Collection = () => {
       {popular && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+            <DaysComponent setVisible={setVisible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )}
@@ -85,7 +97,7 @@ const Collection = () => {
       {following && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+            <DaysComponent setVisible={setVisible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )}
@@ -93,7 +105,7 @@ const Collection = () => {
       {news && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+            <DaysComponent setVisible={setVisible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )}
