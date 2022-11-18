@@ -12,7 +12,7 @@ import images from "../../img";
 
 const HeroSection = () => {
   // const { titleData } = useContext(NFTMarketplaceContext);
-  // const router = useRouter();
+  const router = useRouter();
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
@@ -23,14 +23,16 @@ const HeroSection = () => {
             Discover the most outstanding NTFs in all topics of life. Creative
             your NTFs and sell them
           </p>
+          <div style={{display:"flex"}}>
           <Button
             btnName="Vote Now"
             handleClick={() => router.push("/searchPage")}
           />
           <Button
           btnName="Create Petition"
-          handleClick={() => router.push("/searchPage")}
+          handleClick={() => router.push("/Form")}
           />
+        </div>
         </div>
         <div className={Style.heroSection_box_right}>
           <Image

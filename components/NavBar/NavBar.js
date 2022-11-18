@@ -98,6 +98,7 @@ const NavBar = () => {
             "connected with publickey:",
             response.publicKey.toString()
           );
+          window.localStorage.setItem('walletId',response.publicKey.toString())
           setWalletAddress(response.publicKey.toString());
         }
       } else {
@@ -116,7 +117,8 @@ const NavBar = () => {
     if (solana) {
       const response = await solana.connect();
       console.log("connected with public key", response.publicKey);
-      setWalletAddress(response.publicKey.toString());      
+      setWalletAddress(response.publicKey.toString());  
+      window.localStorage.setItem('walletId',response.publicKey.toString())    
     }
   };
 
