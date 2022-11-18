@@ -15,6 +15,7 @@
     "react-awesome-modal": "^2.0.5",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
+    "react-slick": "^0.29.0",
     "uid": "^2.0.1"
   }
 }

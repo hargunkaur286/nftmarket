@@ -20,6 +20,7 @@ const Collection = () => {
   const [apiData, setApiData] = useState([])
   const [visible, setVisible] = useState(false);
   const [popData, setPopData] = useState('');
+  const [selectedData , setSelectedData] = useState()
   useEffect(() => {
     let arr = [];
     onValue(ref(db, `/`), (snapshot) => {
@@ -61,14 +62,7 @@ const Collection = () => {
   return (
     <div className={Style.collection}>
 
-      <Modal visible={visible} width="400" height="300" effect="fadeInUp" onClickAway={() => setVisible(false)}>
-        <div>
-          <h1>Title</h1>
-          <p>Some Contents</p>
-
-        </div>
-
-      </Modal>
+     
 
       <div className={Style.collection_title}>
         <h2>Top List Creators</h2>
@@ -89,7 +83,7 @@ const Collection = () => {
       {popular && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
-            <DaysComponent setVisible={setVisible} key={i + 1} i={i} el={el} />
+            <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )}
@@ -97,7 +91,7 @@ const Collection = () => {
       {following && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
-            <DaysComponent setVisible={setVisible} key={i + 1} i={i} el={el} />
+            <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )}
@@ -105,7 +99,7 @@ const Collection = () => {
       {news && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
-            <DaysComponent setVisible={setVisible} key={i + 1} i={i} el={el} />
+            <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )}

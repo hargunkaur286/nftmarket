@@ -1,80 +1,32 @@
-import React from "react";
+import React,{useState} from "react";
 import Image from "next/image";
 import { MdVerified } from "react-icons/md";
-
+import Modal from 'react-awesome-modal'
 //INTERNAL IMPORT
 import Style from "./DaysComponents.module.css";
 import images from "../../../img";
 
-const DaysComponents = ({ el, i, setVisible }) => {
-
-  const handleVote = () => {
-    setVisible(true)
-  }
-
+const DaysComponents = ({ el, i ,setVisible , visible, setSelectedData, selectedData}) => {
+  
   return (
+    <>
+     
     <div className={Style.daysComponent}>
       <div className={Style.daysComponent_box}>
         <div className={Style.daysComponent_box_img}>
-          {/* 
-          <Image
-            src={el.background}
-            className={Style.daysComponent_box_img_img}
-            alt="profile background"
-
-            // width={500}
-            // height={300}
-
-            objectFit="covers"
-          /> */}
         </div>
 
         <div className={Style.daysComponent_box_profile}>
-          {/* <Image
-            src={images[`creatorbackground${i + 2}`]}
-            alt="profile"
-
-            // width={200}
-            // height={200}
-
-            className={Style.daysComponent_box_img_1}
-            objectFit="covers"
-          />
-          <Image
-            src={images[`creatorbackground${i + 4}`]}
-            alt="profile"
-            // width={200}
-            // height={200}
-            className={Style.daysComponent_box_img_2}
-            objectFit="covers"
-          /> */}
-          {/* <Image
-            src={images[`creatorbackground${i + 3}`]}
-            alt="profile"
-            // width={200}
-            // height={200}
-            className={Style.daysComponent_box_img_3}
-            objectFit="covers"
-          /> */}
+         
         </div>
 
         <div className={Style.daysComponent_box_title}>
           <h2>{el.title}</h2>
           <div className={Style.daysComponent_box_title_info}>
             <div className={Style.daysComponent_box_title_info_profile}>
-              {/* <Image
-                src={'https://random.imagecdn.app/500/150'}
-                alt="profile"
-                width={30}
-                height={30}
-                objectFit="covers"
-                className={Style.daysComponent_box_title_info_profile_img}
-              /> */}
-
               <p>
                 {el.desc}
                 <span>
-
                   <small>
                     <MdVerified />
                   </small>
@@ -82,13 +34,20 @@ const DaysComponents = ({ el, i, setVisible }) => {
               </p>
             </div>
 
-            <div className={Style.daysComponent_box_title_info_price}>
-              <small onClick={handleVote(el)}>Vote Now</small>
+            <div className={Style.daysComponent_box_title_info_price} onClick={()=>{setSelectedData(el); setVisible(true)}}>
+              <small>Vote Now</small>
             </div>
           </div>
         </div>
       </div>
+    <Modal visible={visible} width="400" height="300" effect="fadeInUp" onClickAway={() => setVisible(false)}>
+        <div style={{color:'black'}}>
+          <h1>{selectedData?.title}</h1>
+          <p>{selectedData?.desc}</p>
+        </div>
+      </Modal>
     </div>
+    </>
   );
 };
 
