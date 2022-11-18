@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import { DiJqueryLogo } from "react-icons/di";
 //----IMPORT ICON
+
+import {BsWallet} from "react-icons/bs"
 import { MdNotifications } from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
 import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
@@ -10,7 +12,7 @@ import { useRouter } from "next/router";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
-import { Discover, HelpCenter, Notification, Profile, SideBar } from "./index";
+import { Discover, HelpCenter, Notification, Profile, SideBar, Wallet } from "./index";
 import { Button, Error } from "../componentsindex";
 import images from "../../img";
 
@@ -26,7 +28,6 @@ const NavBar = () => {
   const [openSideMenu, setOpenSideMenu] = useState(false);
 
   const router = useRouter();
-
   const openMenu = (e) => {
     const btnText = e.target.innerText;
     if (btnText == "Discover") {
@@ -82,6 +83,55 @@ const NavBar = () => {
   //   NFTMarketplaceContext
   // );
 
+  // Wallet Connection
+  const [walletAddress, setWalletAddress] = useState(null);
+  
+  const checkIfWalletIsConnected = async () => {
+    try {
+      const { solana } = window;
+
+      if (solana) {
+        if (solana.isPhantom) {
+          console.log("Wallet Found");
+          const response = await solana.connect({ onlyIfTrusted: true });
+          console.log(
+            "connected with publickey:",
+            response.publicKey.toString()
+          );
+          setWalletAddress(response.publicKey.toString());
+        }
+      } else {
+        alert("Get a phantom wallet")
+        console.log("Get a phantom wallet");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  const connectWallet = async () => {
+    checkIfWalletIsConnected();
+    const { solana } = window;
+    if (solana) {
+      const response = await solana.connect();
+      console.log("connected with public key", response.publicKey);
+      setWalletAddress(response.publicKey.toString());      
+    }
+  };
+
+
+
+
+  const disconnectWallet = async () => {
+    const { solana } = window;
+    if (solana) {
+      await solana.disconnect();
+      setWalletAddress(null);
+    }
+  };
+
+
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
@@ -126,6 +176,15 @@ const NavBar = () => {
               onClick={() => openNotification()}
             />
             {notification && <Notification />}
+          </div>
+
+          {/* Wallet */}
+          <div className={Style.navbar_container_right_notify}>
+            <BsWallet
+              className={Style.notify}
+              onClick={() => connectWallet()}
+            />
+            {Wallet && <Wallet />}
           </div>
 
           {/* CREATE BUTTON SECTION */}
