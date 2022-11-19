@@ -12,7 +12,7 @@ import images from "../../img";
 
 const HeroSection = () => {
   // const { titleData } = useContext(NFTMarketplaceContext);
-  // const router = useRouter();
+  const router = useRouter();
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
@@ -22,7 +22,9 @@ const HeroSection = () => {
           <p>
           Explore web3 with us while you add your signature on success for a greater vision. Create, Discover, Sign & Store Petitions as NFTs.
           </p>
+          <div style={{display:"flex"}}>
           <Button
+<<<<<<< HEAD
             btnName="Vote Now!"
             handleClick={() => router.push("/vote")}
           />
@@ -32,7 +34,16 @@ const HeroSection = () => {
           <Button
             btnName="Create Petition"
             handleClick={() => router.push("/form")}
+=======
+            btnName="Vote Now"
+            handleClick={() => router.push("/searchPage")}
+>>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
           />
+          <Button
+          btnName="Create Petition"
+          handleClick={() => router.push("/Form")}
+          />
+        </div>
         </div>
        
         <div className={Style.heroSection_box_right}>

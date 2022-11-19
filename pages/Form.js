@@ -5,18 +5,23 @@ import { uid } from 'uid';
 //import "./styles.css";
 
 function Form() {
-  const [walletId, setWalletId] = useState(uid());
+  // const [walletId, setWalletId] = useState('');
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const petitionId = uid();
+    let walletId = window.localStorage.getItem('walletId')
     set(ref(db, `${walletId}/${petitionId}/`), {
       title,
       desc,
+      walletId,
       petitionId,
       count: 0,
     });
     alert(`uploaded in ${walletId}`);
+    setTitle("");
+    setDesc("");
   }
 
   return (
@@ -25,21 +30,21 @@ function Form() {
       <h2>Create Petition</h2>
       <form>
         <div class="user-box">
-          <input type="text" name="" required="" onChange={e => setTitle(e.target.value)}
+          <input type="text" name="" required="" value={title} onChange={e => setTitle(e.target.value)}
           ></input>
           <label>Petition Name:</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" onChange={e => setDesc(e.target.value)}></input>
+          <input type="text" name="" value={desc} onChange={e => setDesc(e.target.value)}></input>
           <label>Petition Description:</label>
         </div>
-        <a href="#" onClick={handleSubmit}>
+        <span className="aButton"  onClick={handleSubmit}>
           <span></span>
           <span></span>
           <span></span>
           <span></span>
           Create Petition
-        </a>
+        </span>
       </form>
     </div>
 

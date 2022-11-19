@@ -98,6 +98,7 @@ const NavBar = () => {
             "connected with publickey:",
             response.publicKey.toString()
           );
+          window.localStorage.setItem('walletId',response.publicKey.toString())
           setWalletAddress(response.publicKey.toString());
         }
       } else {
@@ -116,7 +117,8 @@ const NavBar = () => {
     if (solana) {
       const response = await solana.connect();
       console.log("connected with public key", response.publicKey);
-      setWalletAddress(response.publicKey.toString());      
+      setWalletAddress(response.publicKey.toString());  
+      window.localStorage.setItem('walletId',response.publicKey.toString())    
     }
   };
 
@@ -139,44 +141,41 @@ const NavBar = () => {
           <div className={Style.logo}>
             <DiJqueryLogo onClick={() => router.push("/")} />
           </div>
-          <div className={Style.navbar_container_left_box_input}>
-            <div className={Style.navbar_container_left_box_input_box}>
+          {/* <div className={Style.navbar_container_left_box_input}> */}
+            {/* <div className={Style.navbar_container_left_box_input_box}>
               <input type="text" placeholder="Search NFT" />
               <BsSearch onClick={() => {}} className={Style.search_icon} />
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
 
         {/* //END OF LEFT SECTION */}
         <div className={Style.navbar_container_right}>
-          <div className={Style.navbar_container_right_discover}>
+          <div className={Style.navbar_container_right_help}>
             {/* DISCOVER MENU */}
             <p onClick={(e) => openMenu(e)}>Discover</p>
-            {discover && (
-              <div className={Style.navbar_container_right_discover_box}>
-                <Discover />
-              </div>
-            )}
           </div>
 
           {/* HELP CENTER MENU */}
           <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>Help Center</p>
-            {help && (
-              <div className={Style.navbar_container_right_help_box}>
-                <HelpCenter />
-              </div>
-            )}
+            <p onClick={(e) => openMenu(e)}>Petitions</p>
+          </div>
+          {/* HELP CENTER MENU */}
+          <div className={Style.navbar_container_right_help}>
+            <p onClick={(e) => openMenu(e)}>Pricing</p>
+          </div>
+          <div className={Style.navbar_container_right_help}>
+            <p onClick={(e) => openMenu(e)}>About Us</p>
           </div>
 
           {/* NOTIFICATION */}
-          <div className={Style.navbar_container_right_notify}>
+          {/* <div className={Style.navbar_container_right_notify}>
             <MdNotifications
               className={Style.notify}
               onClick={() => openNotification()}
             />
             {notification && <Notification />}
-          </div>
+          </div> */}
 
           {/* Wallet */}
           <div className={Style.navbar_container_right_notify}>
@@ -203,16 +202,16 @@ const NavBar = () => {
 
           <div className={Style.navbar_container_right_profile_box}>
             <div className={Style.navbar_container_right_profile}>
-              <Image
+              {/* <Image
                 src={images.user1}
                 alt="Profile"
                 width={40}
                 height={40}
                 onClick={() => openProfile()}
                 className={Style.navbar_container_right_profile}
-              />
+              /> */}
 
-              {profile && <Profile currentAccount={currentAccount} />}
+              {/* {profile && <Profile currentAccount={currentAccount} />} */}
             </div>
           </div>
 

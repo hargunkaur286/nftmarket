@@ -1,18 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 import Image from "next/image";
 import { MdVerified } from "react-icons/md";
-
+import Modal from 'react-awesome-modal'
 //INTERNAL IMPORT
 import Style from "./DaysComponents.module.css";
 import images from "../../../img";
 
-const DaysComponents = ({ el, i }) => {
+const DaysComponents = ({ el, i ,setVisible , visible, setSelectedData, selectedData}) => {
+  
   return (
+    <>
+     
     <div className={Style.daysComponent}>
 
 
       {/*  start  */}
       <div className={Style.daysComponent_box}>
+<<<<<<< HEAD
         <div className={Style.daysComponent_box_img}>  
           <Image
             src={el.background}
@@ -57,35 +61,57 @@ const DaysComponents = ({ el, i }) => {
 
         <div className={Style.daysComponent_box_title}>
           <h2>{el.heading}</h2>
+=======
+        <div className={Style.daysComponent_box_img}>
+        </div>
+
+        <div className={Style.daysComponent_box_profile}>
+         
+        </div>
+
+        <div className={Style.daysComponent_box_title}>
+          <h2>{el.title}</h2>
+>>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
           <div className={Style.daysComponent_box_title_info}>
             <div className={Style.daysComponent_box_title_info_profile}>
-              <Image
-                src={el.user}
-                alt="profile"
-                width={30}
-                height={30}
-                objectFit="covers"
-                className={Style.daysComponent_box_title_info_profile_img}
-              />
-
               <p>
+<<<<<<< HEAD
                 {el.subHeading}
                 <span> 
+=======
+                {el.desc}
+                <span>
+>>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
                   <small>
                   </small>
                 </span>
               </p>
             </div>
+<<<<<<< HEAD
             <div className={Style.daysComponent_box_title_info_price}>
+=======
+
+            <div className={Style.daysComponent_box_title_info_price} onClick={()=>{setSelectedData(el); setVisible(true)}}>
+>>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
               <small>Vote Now</small>
             </div>
           </div>
         </div>
       </div>
+<<<<<<< HEAD
 
       {/* END */}
 
+=======
+    <Modal visible={visible} width="400" height="300" effect="fadeInUp" onClickAway={() => setVisible(false)}>
+        <div style={{color:'black'}}>
+          <h1>{selectedData?.title}</h1>
+          <p>{selectedData?.desc}</p>
+        </div>
+      </Modal>
+>>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
     </div>
+    </>
   );
 };
 

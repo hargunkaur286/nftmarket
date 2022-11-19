@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { onValue, ref, set } from "firebase/database";
 import {
   BsFillAlarmFill,
   BsFillCalendarDateFill,
   BsCalendar3,
 } from "react-icons/bs";
+import Modal from 'react-awesome-modal';
+import { db } from '../../firebase'
 
 //INTERNAL IMPORT
 import Style from "./Collection.module.css";
@@ -14,7 +17,25 @@ const Collection = () => {
   const [popular, setPopular] = useState(true);
   const [following, setFollowing] = useState(false);
   const [news, setNews] = useState(false);
+  const [apiData, setApiData] = useState([])
+  const [visible, setVisible] = useState(false);
+  const [popData, setPopData] = useState('');
+  const [selectedData , setSelectedData] = useState()
+  useEffect(() => {
+    let arr = [];
+    onValue(ref(db, `/`), (snapshot) => {
+      const data = snapshot.val();
+      const x = Object.values(data);
+      x.forEach(e => {
+        Object.values(e).forEach(a => arr.push(a))
+      })
+      // console.log(arr, 'arr');
+      setApiData(arr);
+    })
+  }, []);
 
+
+<<<<<<< HEAD
 
 
   const CardArray = [
@@ -68,6 +89,8 @@ const Collection = () => {
       subHeading: "Hello",
     },
   ];
+=======
+>>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
 
   // const newsArray = [
   //   {
@@ -155,6 +178,9 @@ const Collection = () => {
   };
   return (
     <div className={Style.collection}>
+
+     
+
       <div className={Style.collection_title}>
         <h2>List of Petitions</h2>
         {/* <div className={Style.collection_collections}>
@@ -173,24 +199,24 @@ const Collection = () => {
       </div>
       {popular && (
         <div className={Style.collection_box}>
-          {CardArray.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+          {apiData.map((el, i) => (
+            <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )}
 
       {/* {following && (
         <div className={Style.collection_box}>
-          {followingArray.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+          {apiData.map((el, i) => (
+            <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )} */}
 
       {/* {news && (
         <div className={Style.collection_box}>
-          {newsArray.map((el, i) => (
-            <DaysComponent key={i + 1} i={i} el={el} />
+          {apiData.map((el, i) => (
+            <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
       )} */}
