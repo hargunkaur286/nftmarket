@@ -25,8 +25,8 @@
   --bg-shadow-dark-color: #2e2c2d;
   --shadow-light-color: #0E131F;
   --main-bg-color: #0E131F;
-  --box-shadow: 1px 1px 2px #8f2c2c,
-    -1px -1px 2px #c13c3c;
+  --box-shadow: 1px 1px 2px #fff ,
+    -1px -1px 2px #fff;
   --box-shadow-2: 1px 1px 2px #8f2c2c,
     -1px -1px 2px #c13c3c;
 }

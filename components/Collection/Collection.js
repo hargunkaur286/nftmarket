@@ -15,100 +15,120 @@ const Collection = () => {
   const [following, setFollowing] = useState(false);
   const [news, setNews] = useState(false);
 
+
+
   const CardArray = [
     {
-      background: images.creatorbackground1,
+      background: images.creatorbackground2,
       user: images.user1,
+      heading: "Petition 1",
+      subHeading: "Hello",
+
     },
     {
       background: images.creatorbackground2,
       user: images.user2,
+      heading: "Petition 2",
+      subHeading: "Hellosss",
     },
     {
       background: images.creatorbackground3,
       user: images.user3,
+      heading: "Petition 3",
+      subHeading: "Hellogjnnjg",
     },
     {
       background: images.creatorbackground4,
       user: images.user4,
+      heading: "Petition 4",
+      subHeading: "Hello",
     },
     {
       background: images.creatorbackground5,
       user: images.user5,
+      heading: "Petition 5",
+      subHeading: "Hello",
     },
     {
       background: images.creatorbackground6,
       user: images.user6,
+      heading: "Petition 6",
+      subHeading: "Hello",
     },
     {
       background: images.creatorbackground7,
       user: images.user7,
+      heading: "Petition 7",
+      subHeading: "Hello",
     },
     {
       background: images.creatorbackground8,
       user: images.user8,
+      heading: "Petition 8",
+      subHeading: "Hello",
     },
   ];
-  const newsArray = [
-    {
-      background: images.creatorbackground3,
-      user: images.user3,
-    },
-    {
-      background: images.creatorbackground4,
-      user: images.user4,
-    },
-    {
-      background: images.creatorbackground5,
-      user: images.user5,
-    },
-    {
-      background: images.creatorbackground6,
-      user: images.user6,
-    },
-    {
-      background: images.creatorbackground1,
-      user: images.user1,
-    },
-    {
-      background: images.creatorbackground2,
-      user: images.user2,
-    },
-  ];
-  const followingArray = [
-    {
-      background: images.creatorbackground1,
-      user: images.user1,
-    },
-    {
-      background: images.creatorbackground2,
-      user: images.user2,
-    },
-    {
-      background: images.creatorbackground3,
-      user: images.user3,
-    },
-    {
-      background: images.creatorbackground4,
-      user: images.user4,
-    },
-    {
-      background: images.creatorbackground5,
-      user: images.user5,
-    },
-    {
-      background: images.creatorbackground6,
-      user: images.user6,
-    },
-    {
-      background: images.creatorbackground7,
-      user: images.user7,
-    },
-    {
-      background: images.creatorbackground8,
-      user: images.user8,
-    },
-  ];
+
+  // const newsArray = [
+  //   {
+  //     background: images.creatorbackground3,
+  //     user: images.user3,
+  //   },
+  //   {
+  //     background: images.creatorbackground4,
+  //     user: images.user4,
+  //   },
+  //   {
+  //     background: images.creatorbackground5,
+  //     user: images.user5,
+  //   },
+  //   {
+  //     background: images.creatorbackground6,
+  //     user: images.user6,
+  //   },
+  //   {
+  //     background: images.creatorbackground1,
+  //     user: images.user1,
+  //   },
+  //   {
+  //     background: images.creatorbackground2,
+  //     user: images.user2,
+  //   },
+  // ];
+  // const followingArray = [
+  //   {
+  //     background: images.creatorbackground1,
+  //     user: images.user1,
+  //   },
+  //   {
+  //     background: images.creatorbackground2,
+  //     user: images.user2,
+  //   },
+  //   {
+  //     background: images.creatorbackground3,
+  //     user: images.user3,
+  //   },
+  //   {
+  //     background: images.creatorbackground4,
+  //     user: images.user4,
+  //   },
+  //   {
+  //     background: images.creatorbackground5,
+  //     user: images.user5,
+  //   },
+  //   {
+  //     background: images.creatorbackground6,
+  //     user: images.user6,
+  //   },
+  //   {
+  //     background: images.creatorbackground7,
+  //     user: images.user7,
+  //   },
+  //   {
+  //     background: images.creatorbackground8,
+  //     user: images.user8,
+  //   },
+  // ];
 
   const openPopular = () => {
     if (!popular) {
@@ -136,8 +156,8 @@ const Collection = () => {
   return (
     <div className={Style.collection}>
       <div className={Style.collection_title}>
-        <h2>Top List Creators</h2>
-        <div className={Style.collection_collections}>
+        <h2>List of Petitions</h2>
+        {/* <div className={Style.collection_collections}>
           <div className={Style.collection_collections_btn}>
             <button onClick={() => openPopular()}>
               <BsFillAlarmFill /> 24 hours
@@ -149,7 +169,7 @@ const Collection = () => {
               <BsFillCalendarDateFill /> 30 days
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
       {popular && (
         <div className={Style.collection_box}>
@@ -159,21 +179,21 @@ const Collection = () => {
         </div>
       )}
 
-      {following && (
+      {/* {following && (
         <div className={Style.collection_box}>
           {followingArray.map((el, i) => (
             <DaysComponent key={i + 1} i={i} el={el} />
           ))}
         </div>
-      )}
+      )} */}
 
-      {news && (
+      {/* {news && (
         <div className={Style.collection_box}>
           {newsArray.map((el, i) => (
             <DaysComponent key={i + 1} i={i} el={el} />
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };

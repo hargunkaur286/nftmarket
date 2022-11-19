@@ -6,7 +6,8 @@ import Style from "../styles/aboutus.module.css";
 import { Brand } from "../components/componentsindex";
 import images from "../img";
 
-const aboutus = () => {
+const Aboutus = () => {
+
   const founderArray = [
     {
       name: "Niamh O'Shea",
@@ -44,12 +45,13 @@ const aboutus = () => {
       info: "Countries and regions have our presence (as of Sept. 30, 2021",
     },
   ];
+
   return (
     <div className={Style.aboutus}>
       <div className={Style.aboutus_box}>
         <div className={Style.aboutus_box_hero}>
           <div className={Style.aboutus_box_hero_left}>
-            <h1>👋 About Us.</h1>
+            <h1>👋 About Us</h1>
             <p>
               We’re impartial and independent, and every day we create
               distinctive, world-class programmes and content which inform,
@@ -111,4 +113,4 @@ const aboutus = () => {
   );
 };
 
-export default aboutus;
+export default Aboutus;

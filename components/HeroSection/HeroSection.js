@@ -18,24 +18,31 @@ const HeroSection = () => {
       <div className={Style.heroSection_box}>
         <div className={Style.heroSection_box_left}>
           {/* <h1>{titleData} 🖼️</h1> */}
-          <h1>Discover, collect and sell NFTs🖼️</h1>
+          <h1>Create Change with a Click</h1>
           <p>
-            Discover the most outstanding NTFs in all topics of life. Creative
-            your NTFs and sell them
+          Explore web3 with us while you add your signature on success for a greater vision. Create, Discover, Sign & Store Petitions as NFTs.
           </p>
           <Button
-            btnName="Start your search"
-            handleClick={() => router.push("/searchPage")}
+            btnName="Vote Now!"
+            handleClick={() => router.push("/vote")}
+          />
+          <div>
+
+          </div>
+          <Button
+            btnName="Create Petition"
+            handleClick={() => router.push("/form")}
           />
         </div>
+       
         <div className={Style.heroSection_box_right}>
           <Image
-            src={images.hero}
+            src={images.main}
             alt="Hero section"
             width={600}
             height={600}
           />
-        </div>
+        </div>      
       </div>
     </div>
   );

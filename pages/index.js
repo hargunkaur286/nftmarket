@@ -4,8 +4,9 @@ import { onValue, ref, set } from "firebase/database";
 
 //INTERNAL IMPORT
 import Style from "../styles/index.module.css";
-import { Collection, HeroSection, Subscription } from "../components/componentsindex";
-import { NFTCardTwo } from '../collectionPage/collectionIndex';
+import { Collection, HeroSection, Subscription} from "../components/componentsindex";
+import Aboutus from './AboutUs';
+// import { NFTCardTwo } from '../collectionPage/collectionIndex';
 
 function index() {
 console.log("helloooo")
@@ -18,6 +19,8 @@ onValue(ref(db,'/'),(snapshot)=>{
     <div className = {Style.homePage}>
       <HeroSection />
       <Collection/>
+      {/* <Aboutus /> */}
+      
       {/* <NFTCardTwo/> */}
       {/* <Subscription/> */}
     </div>

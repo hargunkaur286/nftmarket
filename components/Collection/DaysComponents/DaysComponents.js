@@ -9,9 +9,11 @@ import images from "../../../img";
 const DaysComponents = ({ el, i }) => {
   return (
     <div className={Style.daysComponent}>
+
+
+      {/*  start  */}
       <div className={Style.daysComponent_box}>
-        <div className={Style.daysComponent_box_img}>
-         
+        <div className={Style.daysComponent_box_img}>  
           <Image
             src={el.background}
             className={Style.daysComponent_box_img_img}
@@ -24,7 +26,7 @@ const DaysComponents = ({ el, i }) => {
           />
         </div>
 
-        <div className={Style.daysComponent_box_profile}>
+        {/* <div className={Style.daysComponent_box_profile}>
           <Image
             src={images[`creatorbackground${i + 2}`]}
             alt="profile"
@@ -51,10 +53,10 @@ const DaysComponents = ({ el, i }) => {
             className={Style.daysComponent_box_img_3}
             objectFit="covers"
           />
-        </div>
+        </div> */}
 
         <div className={Style.daysComponent_box_title}>
-          <h2>Amazing Collection</h2>
+          <h2>{el.heading}</h2>
           <div className={Style.daysComponent_box_title_info}>
             <div className={Style.daysComponent_box_title_info_profile}>
               <Image
@@ -67,22 +69,22 @@ const DaysComponents = ({ el, i }) => {
               />
 
               <p>
-                Creator
-                <span>
-                  Shoaib Bhai
+                {el.subHeading}
+                <span> 
                   <small>
-                    <MdVerified />
                   </small>
                 </span>
               </p>
             </div>
-
             <div className={Style.daysComponent_box_title_info_price}>
-              <small>{i + 4}.255 ETH</small>
+              <small>Vote Now</small>
             </div>
           </div>
         </div>
       </div>
+
+      {/* END */}
+
     </div>
   );
 };
