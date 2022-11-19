@@ -35,123 +35,6 @@ const Collection = () => {
   }, []);
 
 
-<<<<<<< HEAD
-
-
-  const CardArray = [
-    {
-      background: images.creatorbackground2,
-      user: images.user1,
-      heading: "Petition 1",
-      subHeading: "Hello",
-
-    },
-    {
-      background: images.creatorbackground2,
-      user: images.user2,
-      heading: "Petition 2",
-      subHeading: "Hellosss",
-    },
-    {
-      background: images.creatorbackground3,
-      user: images.user3,
-      heading: "Petition 3",
-      subHeading: "Hellogjnnjg",
-    },
-    {
-      background: images.creatorbackground4,
-      user: images.user4,
-      heading: "Petition 4",
-      subHeading: "Hello",
-    },
-    {
-      background: images.creatorbackground5,
-      user: images.user5,
-      heading: "Petition 5",
-      subHeading: "Hello",
-    },
-    {
-      background: images.creatorbackground6,
-      user: images.user6,
-      heading: "Petition 6",
-      subHeading: "Hello",
-    },
-    {
-      background: images.creatorbackground7,
-      user: images.user7,
-      heading: "Petition 7",
-      subHeading: "Hello",
-    },
-    {
-      background: images.creatorbackground8,
-      user: images.user8,
-      heading: "Petition 8",
-      subHeading: "Hello",
-    },
-  ];
-=======
->>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
-
-  // const newsArray = [
-  //   {
-  //     background: images.creatorbackground3,
-  //     user: images.user3,
-  //   },
-  //   {
-  //     background: images.creatorbackground4,
-  //     user: images.user4,
-  //   },
-  //   {
-  //     background: images.creatorbackground5,
-  //     user: images.user5,
-  //   },
-  //   {
-  //     background: images.creatorbackground6,
-  //     user: images.user6,
-  //   },
-  //   {
-  //     background: images.creatorbackground1,
-  //     user: images.user1,
-  //   },
-  //   {
-  //     background: images.creatorbackground2,
-  //     user: images.user2,
-  //   },
-  // ];
-  // const followingArray = [
-  //   {
-  //     background: images.creatorbackground1,
-  //     user: images.user1,
-  //   },
-  //   {
-  //     background: images.creatorbackground2,
-  //     user: images.user2,
-  //   },
-  //   {
-  //     background: images.creatorbackground3,
-  //     user: images.user3,
-  //   },
-  //   {
-  //     background: images.creatorbackground4,
-  //     user: images.user4,
-  //   },
-  //   {
-  //     background: images.creatorbackground5,
-  //     user: images.user5,
-  //   },
-  //   {
-  //     background: images.creatorbackground6,
-  //     user: images.user6,
-  //   },
-  //   {
-  //     background: images.creatorbackground7,
-  //     user: images.user7,
-  //   },
-  //   {
-  //     background: images.creatorbackground8,
-  //     user: images.user8,
-  //   },
-  // ];
 
   const openPopular = () => {
     if (!popular) {
@@ -182,7 +65,7 @@ const Collection = () => {
      
 
       <div className={Style.collection_title}>
-        <h2>List of Petitions</h2>
+        <h2>List of Petitions:</h2>
         {/* <div className={Style.collection_collections}>
           <div className={Style.collection_collections_btn}>
             <button onClick={() => openPopular()}>
@@ -205,21 +88,21 @@ const Collection = () => {
         </div>
       )}
 
-      {/* {following && (
+      {following && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
             <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
-      )} */}
+      )}
 
-      {/* {news && (
+      {news && (
         <div className={Style.collection_box}>
           {apiData.map((el, i) => (
             <DaysComponent setVisible={setVisible} selectedData={selectedData} setSelectedData={setSelectedData} visible={visible} key={i + 1} i={i} el={el} />
           ))}
         </div>
-      )} */}
+      )}
     </div>
   );
 };

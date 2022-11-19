@@ -2,12 +2,7 @@ import React from 'react'
 import { db } from '../firebase'
 import { onValue, ref, set } from "firebase/database";
 //INTERNAL IMPORT
-<<<<<<< HEAD
-import Style from "../styles/index.module.css";
-import { Collection, HeroSection, Subscription} from "../components/componentsindex";
-import Aboutus from './AboutUs';
-// import { NFTCardTwo } from '../collectionPage/collectionIndex';
-=======
+
 // import Style from "../styles/index.module.css";
 import { Collection, HeroSection, Subscription } from "../components/componentsindex";
 import { NFTCardTwo } from '../collectionPage/collectionIndex';
@@ -17,7 +12,6 @@ import Image from "next/image";
 import Style from "../styles/aboutus.module.css";
 import { Brand } from "../components/componentsindex";
 import images from "../img";
->>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
 
 function index() {
   const subscriptionArray = [
@@ -63,36 +57,40 @@ function index() {
   return (
     <div className={Style.homePage}>
       <HeroSection />
-<<<<<<< HEAD
-      <Collection/>
-      {/* <Aboutus /> */}
-      
-=======
+<div id='petitionRedirect'></div>
       <Collection />
+      
+      <div id='pricingRedirect'></div>
       <div className={Style.Subscription}>
       <div className={Style.Subscription_box}>
         <div className={Style.Subscription_box_info}>
+        
           <h1>💎 Subscription</h1>
           <p>Pricing to fit the needs of any companie size.</p>
         </div>
 
+        
         <div className={Style.Subscription_box_box}>
           {subscriptionArray.map((el, i) => (
+            
             <Subscription key={i + 1} i={1} el={el} />
+            
           ))}
         </div>
       </div>
     </div>
+    
         <div>
+        <div id='aboutUsRedirect'></div>
         <div className={Style.aboutus}>
       <div className={Style.aboutus_box}>
         <div className={Style.aboutus_box_hero}>
           <div className={Style.aboutus_box_hero_left}>
             <h1>👋 About Us.</h1>
             <p>
-              We’re impartial and independent, and every day we create
-              distinctive, world-class programmes and content which inform,
-              educate and entertain millions of people in the around the world.
+            Here, on HelpingHands, we use web3 to connect
+            individuals from all around the world to launch campaigns, rally supporters, 
+            and collaborate with decision-makers to advance solutions for a better future.
             </p>
           </div>
           <div className={Style.aboutus_box_hero_right}>
@@ -103,7 +101,6 @@ function index() {
       {/* <Brand /> */}
     </div>
         </div>
->>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
       {/* <NFTCardTwo/> */}
       {/* <Subscription/> */}
     </div>

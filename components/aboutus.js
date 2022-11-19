@@ -53,9 +53,9 @@ const Aboutus = () => {
           <div className={Style.aboutus_box_hero_left}>
             <h1>👋 About Us</h1>
             <p>
-              We’re impartial and independent, and every day we create
-              distinctive, world-class programmes and content which inform,
-              educate and entertain millions of people in the around the world.
+            Here, on HelpingHands, we use [blockchain/jo bhi use kr rhe] to connect
+            individuals from all around the world to launch campaigns, rally supporters, 
+            and collaborate with decision-makers to advance solutions for a better future.
             </p>
           </div>
           <div className={Style.aboutus_box_hero_right}>

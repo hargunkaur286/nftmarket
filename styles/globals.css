@@ -539,3 +539,9 @@ button:hover {
     background: black;
   }
 }
+
+.modalcss{
+  color:red;
+  background-color: #03e9f4;
+  
+}

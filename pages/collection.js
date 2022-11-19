@@ -6,6 +6,7 @@ import images from "../img";
 import {
   Banner,
   CollectionProfile,
+  NFTCardTwo
   
 } from "../collectionPage/collectionIndex";
 // import Filter from "../components/Filter/Filter";
@@ -42,9 +43,9 @@ const collection = () => {
       <Banner bannerImage={images.creatorbackground1} />
       <CollectionProfile />
       {/* <Filter /> */}
-      {/* <NFTCardTwo NFTData={collectionArray} /> */}
+      <NFTCardTwo NFTData={collectionArray} />
 
-      {/* <NFTCardTwo /> */}
+      <NFTCardTwo />
 
 
       {/* <Slider />

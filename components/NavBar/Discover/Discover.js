@@ -7,10 +7,6 @@ import Style from "./Discover.module.css";
 const Discover = () => {
 
 
-  //Wallet Connection Start
-
-  // Wallet Connection End
-
   //--------DISCOVER NAVIGATION MENU
   const discover = [
     {

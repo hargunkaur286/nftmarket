@@ -35,6 +35,7 @@ const NavBar = () => {
       setHelp(false);
       setNotification(false);
       setProfile(false);
+      onclick
     } else if (btnText == "Help Center") {
       setDiscover(false);
       setHelp(true);
@@ -158,14 +159,15 @@ const NavBar = () => {
 
           {/* HELP CENTER MENU */}
           <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>Petitions</p>
+            <p onClick={(e) => {router.push('/#petitionRedirect')}}>Petitions</p>
           </div>
           {/* HELP CENTER MENU */}
           <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>Pricing</p>
+            <p onClick={(e) => {router.push('/#pricingRedirect')}}>Pricing</p>
           </div>
+          {/* ABOUT US */}
           <div className={Style.navbar_container_right_help}>
-            <p onClick={(e) => openMenu(e)}>About Us</p>
+            <p onClick={(e) => {router.push('/#aboutUsRedirect')}}>About Us</p>
           </div>
 
           {/* NOTIFICATION */}

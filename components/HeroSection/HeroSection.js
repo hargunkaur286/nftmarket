@@ -24,21 +24,10 @@ const HeroSection = () => {
           </p>
           <div style={{display:"flex"}}>
           <Button
-<<<<<<< HEAD
             btnName="Vote Now!"
             handleClick={() => router.push("/vote")}
           />
-          <div>
-
-          </div>
-          <Button
-            btnName="Create Petition"
-            handleClick={() => router.push("/form")}
-=======
-            btnName="Vote Now"
-            handleClick={() => router.push("/searchPage")}
->>>>>>> d456782f291082d15e4753dc5c6aa76133fb97dc
-          />
+    
           <Button
           btnName="Create Petition"
           handleClick={() => router.push("/Form")}
@@ -48,7 +37,7 @@ const HeroSection = () => {
        
         <div className={Style.heroSection_box_right}>
           <Image
-            src={images.main}
+            src={images.hero}
             alt="Hero section"
             width={600}
             height={600}
